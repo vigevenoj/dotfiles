@@ -1,4 +1,4 @@
-#Aliases
+# Aliases
 alias l.='ls -Gd .*'
 alias la='ls -aG'
 alias lf='ls -FA'
@@ -16,7 +16,7 @@ alias mysql_resock='sudo ln -s /opt/local/var/run/mysql5/mysqld.sock /tmp/mysql.
 source ~/bin/todo_completer.sh
 complete -F _todo_sh -o default t
 
-#multiple history files by shell id
+# Multiple history files by shell id
 SHELLID=$(tty | sed 's!/!.!g')
 HISTFILE=$HISTFILE$SHELLID
 
@@ -37,7 +37,7 @@ if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
 fi
 
-# Move newly-downloaded musc into iTunes
+# Move newly-downloaded music into iTunes
 function new_music() { 
 find ~/Downloads -name "*.mp3" -print0 | xargs -0 -I {} mv {} ~/Music/Automatically\ Add\ to\ iTunes/ 
 }
