@@ -19,6 +19,8 @@ complete -F _todo_sh -o default t
 # Multiple history files by shell id
 SHELLID=$(tty | sed 's!/!.!g')
 HISTFILE=$HISTFILE$SHELLID
+export HISTCONTROL=ignoredups
+export HISTIGNORE="ls:ll:la:l.:pwd:exit:clear"
 
 # MacPorts
 export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:/Users/vigevenoj/bin:$PATH
