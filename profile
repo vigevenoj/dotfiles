@@ -4,10 +4,14 @@ alias la='ls -aG'
 alias lf='ls -FA'
 alias ll='ls -lAG'
 alias ls='ls -G'
-alias qlook='qlmanage -p "$@" >& /dev/null'
+alias ping='ping -c 4'
+# Todo management
 alias t='/opt/local/bin/todotxt'
+# Databases
 alias mysql='/opt/local/bin/mysql5'
 alias psql='psql -U postgres'
+# OS X specific
+alias qlook='qlmanage -p "$@" >& /dev/null'
 
 # Until I set apache/mysql query browser/mysql administrator to use the right socket, just symlink between the place they look (/tmp/mysql.sock) and the correct location (in /opt/local).
 alias mysql_resock='sudo ln -s /opt/local/var/run/mysql5/mysqld.sock /tmp/mysql.sock'
@@ -42,4 +46,24 @@ fi
 # Move newly-downloaded music into iTunes
 function new_music() { 
 find ~/Downloads -name "*.mp3" -print0 | xargs -0 -I {} mv {} ~/Music/Automatically\ Add\ to\ iTunes/ 
+}
+
+extract () {
+	if [ -f $1 ] ; then
+		case $1 in
+			*.tar.bz2) 	tar xjf $1 	;;
+			*.tar.gz) 	tar xzf $1 	;;
+			*.bz) 		bunzip2 $1 	;;
+			*.rar) 		unrar x $1 	;;
+			*.gz) 		gunzip $1 	;;
+			*.tar) 		tar xf $1 	;;
+			*.tbz2) 	tar xjf $1 	;;
+			*.tgz) 		tar xzf $1 	;;
+			*.zip) 		unzip $1 	;;
+			*.Z) 		uncompress $1 	;;
+			*) 		echo "'$1' cannot be extracted via extract()" 	;;
+		esac
+	else
+		echo "'$1' is not a valid file"
+	fi
 }
