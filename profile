@@ -67,3 +67,9 @@ extract () {
 		echo "'$1' is not a valid file"
 	fi
 }
+
+#mkdir, cd into it
+function mkcd () {
+	mkdir -p "$*"
+	cd "$*"
+}
