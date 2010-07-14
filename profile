@@ -1,8 +1,10 @@
 # Aliases
+# Busybox is missing colorized output and -F option
 alias l.='ls -d .*'
 alias la='ls -a'
 alias ll='ls -lA'
 alias asearch='apt-cache search'
+
 
 # Todo management
 alias t='/home/user/bin/todo.sh'
@@ -13,7 +15,7 @@ complete -F _todo_sh -o default t
 
 # Histry settings
 export HISTCONTROL=ignoredups
-export HISTIGNORE="ls:ll:la:l.:pwd:exit:clear"
+export HISTIGNORE="ls:ll:la:l.:pwd:exit:clear:asearch"
 
 export EDITOR=vim
 
