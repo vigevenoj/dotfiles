@@ -13,8 +13,6 @@ alias psql='psql -U postgres'
 # OS X specific
 alias qlook='qlmanage -p "$@" >& /dev/null'
 
-# Until I set apache/mysql query browser/mysql administrator to use the right socket, just symlink between the place they look (/tmp/mysql.sock) and the correct location (in /opt/local).
-alias mysql_resock='sudo ln -s /opt/local/var/run/mysql5/mysqld.sock /tmp/mysql.sock'
 
 # For todo script tab completion
 source ~/bin/todo_completer.sh
@@ -73,3 +71,20 @@ function mkcd () {
 	mkdir -p "$*"
 	cd "$*"
 }
+
+function mysql_resock() {
+	if [ -S /tmp/mysql.sock ]; then
+		echo "/tmp/mysql.sock already exists"
+	else
+		sudo ln -s /opt/local/var/run/mysql5/mysqld.sock /tmp/mysql.sock
+	fi
+}	
+
+# Figure out the what kind of system we're on
+#function whatami () {
+#	if [ -e "/bin/busybox" ]; then
+#		echo "busybox"
+#	else
+#		echo "not busybox";
+#	fi
+#}
