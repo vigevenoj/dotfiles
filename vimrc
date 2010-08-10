@@ -39,15 +39,18 @@ au BufRead,BufNewFile *.clj set filetype=clojure
 " For jQuery
 au BufRead,BufNewFile *.js set ft=javascript.jquery
 
-" mini buffer explorer
-let g:miniBufExplModSelTarget = 1
-let g:miniBufExplorererMoreThanOne = 0
-let g:miniBufExplModeSelTarget = 0
-let g:miniBufExplUseSingleClick = 1
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplVSplit = 25
-let g:miniBufExplSplitBelow = 1
+if &diff
 
+else
+	" mini buffer explorer
+	let g:miniBufExplModSelTarget = 1
+	let g:miniBufExplorererMoreThanOne = 0
+	let g:miniBufExplModeSelTarget = 0
+	let g:miniBufExplUseSingleClick = 1
+	let g:miniBufExplMapWindowNavVim = 1
+	let g:miniBufExplVSplit = 25
+	let g:miniBufExplSplitBelow = 1
+endif
 " Rails
 " Change which file opens after executing :Rails command
 "let g:rails_default_file='config/database.yml'
