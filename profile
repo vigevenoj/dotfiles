@@ -39,6 +39,8 @@ export DBUS_SESSION_BUS_ADDRESS="launchd:env=DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 # Bash Completion from macports
 if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
+#    complete -C /opt/local/share/java/apache-ant/bin/complete-ant-cmd.pl ant
+    complete -C /usr/share/java/ant-1.7.1/bin/complete-ant-cmd.pl ant
 fi
 
 # Move newly-downloaded music into iTunes
