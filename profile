@@ -15,8 +15,10 @@ alias qlook='qlmanage -p "$@" >& /dev/null'
 
 
 # For todo script tab completion
-source ~/bin/todo_completer.sh
-complete -F _todo_sh -o default t
+if [ -f ~/bin/todo_completer.sh ]; then
+	source ~/bin/todo_completer.sh
+	complete -F _todo_sh -o default t
+fi
 
 # Multiple history files by shell id
 SHELLID=$(tty | sed 's!/!.!g')
