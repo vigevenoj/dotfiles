@@ -1,9 +1,13 @@
 " 
 set nocompatible "No vi compatibility
 
+" Start Pathogen
+filetype off
+call pathogen#runtime_append_all_bundles()
+
 " Attempt to determine filetype based on name and contents
-filetype indent plugin on
 syntax on
+filetype indent plugin on
 
 " Set to auto read when a file is changed externally
 set autoread
@@ -23,34 +27,12 @@ set cmdheight=2
 
 " Map Y to act like D and C; ie yank until EOL rather than act as yy
 map Y y$
-" Map <C-L> (redraw screen) to also turn off search highlighting until the
-" next search
-nnoremap <C-L> :nohl<CR><C-L>
 
-"For Amarok, tabs are 4 spaces
-"set tabstop=4
-"set shiftwidth=4
-"set expandtab
-"set softtabstop=4 "Treat 4spaces like a tab
-"set sw=4
+" Map NERDTree toggle to F2 for now
+map <F2> :NERDTreeToggle<CR>
 
 " clojure
 au BufRead,BufNewFile *.clj set filetype=clojure
 " For jQuery
 au BufRead,BufNewFile *.js set ft=javascript.jquery
 
-if &diff
-
-else
-	" mini buffer explorer
-	let g:miniBufExplModSelTarget = 1
-	let g:miniBufExplorererMoreThanOne = 0
-	let g:miniBufExplModeSelTarget = 0
-	let g:miniBufExplUseSingleClick = 1
-	let g:miniBufExplMapWindowNavVim = 1
-	let g:miniBufExplVSplit = 25
-	let g:miniBufExplSplitBelow = 1
-endif
-" Rails
-" Change which file opens after executing :Rails command
-"let g:rails_default_file='config/database.yml'
