@@ -14,12 +14,6 @@ alias psql='psql -U postgres'
 alias qlook='qlmanage -p "$@" >& /dev/null'
 
 
-# For todo script tab completion
-if [ -f ~/bin/todo_completer.sh ]; then
-	source ~/bin/todo_completer.sh
-	complete -F _todo_sh -o default t
-fi
-
 # Multiple history files by shell id
 SHELLID=$(tty | sed 's!/!.!g')
 HISTFILE=$HISTFILE$SHELLID
@@ -37,6 +31,12 @@ export XDG_DATA_DIRS=/opt/local/share
 # KDE can't find the session bus address on OS X:
 #  (Apps want DBUS_SESSION_BUS_ADDRESS to be defined)
 export DBUS_SESSION_BUS_ADDRESS="launchd:env=DBUS_LAUNCHD_SESSION_BUS_SOCKET"
+
+# For todo script tab completion
+if [ -f ~/bin/todo_completer.sh ]; then
+	source ~/bin/todo_completer.sh
+	complete -F _todo_sh -o default t
+fi
 
 # Bash Completion from macports
 if [ -f /opt/local/etc/bash_completion ]; then
