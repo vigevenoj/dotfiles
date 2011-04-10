@@ -91,3 +91,4 @@ function mysql_resock() {
 #		echo "not busybox";
 #	fi
 #}
+export PATH=$HOME/local/bin:$PATH
