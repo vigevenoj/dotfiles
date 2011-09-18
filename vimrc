@@ -30,9 +30,11 @@ map Y y$
 
 " Map NERDTree toggle to F2 for now
 map <F2> :NERDTreeToggle<CR>
+map <silent> <Leader>l :set cursorline! <CR>
 
 " clojure
 au BufRead,BufNewFile *.clj set filetype=clojure
 " For jQuery
 au BufRead,BufNewFile *.js set ft=javascript.jquery
-
+" Freemarker
+au BufRead,BufNewFile *.ftl set ft=ftl
