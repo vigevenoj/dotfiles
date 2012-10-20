@@ -5,8 +5,6 @@ alias lf='ls -FA'
 alias ll='ls -lAG'
 alias ls='ls -G'
 alias ping='ping -c 4'
-# Todo management
-alias t='/opt/local/bin/todotxt'
 # Databases
 alias mysql='/opt/local/bin/mysql5'
 alias psql='psql -U postgres'
@@ -14,14 +12,12 @@ alias psql='psql -U postgres'
 alias qlook='qlmanage -p "$@" >& /dev/null'
 
 
-# Multiple history files by shell id
-SHELLID=$(tty | sed 's!/!.!g')
+# Configure bash history
+SHELLID=$(tty | sed 's!/!.!g') # Multiple history files by shell id
 HISTFILE=$HISTFILE$SHELLID
 export HISTCONTROL=ignoredups
 export HISTIGNORE="ls:ll:la:l.:lf:pwd:exit:clear"
 
-# MacPorts
-export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:/Users/vigevenoj/bin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 export EDITOR=vim
 
@@ -38,10 +34,16 @@ if [ -f ~/bin/todo_completer.sh ]; then
 	complete -F _todo_sh -o default t
 fi
 
+# MacPorts
 # Bash Completion from macports
 if [ -f /opt/local/etc/bash_completion ]; then
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
     . /opt/local/etc/bash_completion
     complete -C /usr/share/java/ant-1.7.1/bin/complete-ant-cmd.pl ant
+fi
+
+if [ -f $HOME/bin/fixhpmeter-completion.bash ]; then
+	. $HOME/bin/fixhpmeter-completion.bash
 fi
 
 # Move newly-downloaded music into iTunes
@@ -83,12 +85,13 @@ function mysql_resock() {
 	fi
 }	
 
-# Figure out the what kind of system we're on
-#function whatami () {
-#	if [ -e "/bin/busybox" ]; then
-#		echo "busybox"
-#	else
-#		echo "not busybox";
-#	fi
-#}
-export PATH=$HOME/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/local/bin:$PATH
+
+# Maven configuration
+export MAVEN_HOME=/usr/share/maven
+export MAVEN_OPTS="-Xmx2048m -Xms128m -XX:+UseConcMarkSweepGC -XX:+UseParNewGC"
+export ANT_OPTS=$MAVEN_OPTS
+
+
+# rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
