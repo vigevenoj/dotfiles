@@ -10,9 +10,6 @@
 [submodule "vim/bundle/vim-dbext"]
 	path = vim/bundle/vim-dbext
 	url = git://github.com/edsono/vim-dbext.git
-[submodule "vim/bundle/vim-jquery"]
-	path = vim/bundle/vim-jquery
-	url = git://github.com/bronson/vim-jquery.git
 [submodule "vim/bundle/vim-rails"]
 	path = vim/bundle/vim-rails
 	url = git://github.com/tpope/vim-rails.git
