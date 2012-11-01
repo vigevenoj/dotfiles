@@ -8,3 +8,6 @@ Thumbs.db
 .svn
 *~
 .*.swp
+
+# gitignores
+#.gitignore
