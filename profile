@@ -21,13 +21,6 @@ export HISTIGNORE="ls:ll:la:l.:lf:pwd:exit:clear"
 export MANPATH=/opt/local/share/man:$MANPATH
 export EDITOR=vim
 
-# For running KDE4 apps
-export XDG_DATA_DIRS=/opt/local/share
-
-# KDE can't find the session bus address on OS X:
-#  (Apps want DBUS_SESSION_BUS_ADDRESS to be defined)
-export DBUS_SESSION_BUS_ADDRESS="launchd:env=DBUS_LAUNCHD_SESSION_BUS_SOCKET"
-
 # For todo script tab completion
 if [ -f ~/bin/todo_completer.sh ]; then
 	source ~/bin/todo_completer.sh
@@ -40,10 +33,6 @@ if [ -f /opt/local/etc/bash_completion ]; then
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
     . /opt/local/etc/bash_completion
     complete -C /usr/share/java/ant-1.7.1/bin/complete-ant-cmd.pl ant
-fi
-
-if [ -f $HOME/bin/fixhpmeter-completion.bash ]; then
-	. $HOME/bin/fixhpmeter-completion.bash
 fi
 
 # Move newly-downloaded music into iTunes
@@ -95,3 +84,12 @@ export ANT_OPTS=$MAVEN_OPTS
 
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+##
+# Your previous /Users/vigevenoj/.bash_profile file was backed up as /Users/vigevenoj/.bash_profile.macports-saved_2012-11-19_at_20:02:06
+##
+
+# MacPorts Installer addition on 2012-11-19_at_20:02:06: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
