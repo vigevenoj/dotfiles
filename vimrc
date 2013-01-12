@@ -45,6 +45,7 @@ au BufRead,BufNewFile *.js set ft=javascript.jquery
 
 " Ruby should be two spaces instead of tabs
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+autocmd Filetype bash setlocal ts=2 sw=2 expandtab
 
 " Nyan! ------------------------------------------------------------------- {{{
 
