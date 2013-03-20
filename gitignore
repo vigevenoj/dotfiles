@@ -11,3 +11,5 @@ Thumbs.db
 
 # gitignores
 #.gitignore
+# vim's network history
+.netrwhist
