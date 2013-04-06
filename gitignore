@@ -8,3 +8,9 @@ Thumbs.db
 .svn
 *~
 .*.swp
+
+# Build and generated files #
+.classpath
+.project
+.settings/
+target/
