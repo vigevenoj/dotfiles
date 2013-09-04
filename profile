@@ -35,6 +35,10 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
     complete -C /usr/share/java/ant-1.7.1/bin/complete-ant-cmd.pl ant
 fi
 
+if [ -d /Library/PostgreSQL/9.2/bin ]; then
+  export PATH=$PATH:/Library/PostgreSQL/9.2/bin
+fi
+
 # Move newly-downloaded music into iTunes
 function new_music() { 
 find ~/Downloads -name "*.mp3" -print0 | xargs -0 -I {} mv {} ~/Music/Automatically\ Add\ to\ iTunes/ 
@@ -60,7 +64,6 @@ export PATH=$HOME/bin:$HOME/local/bin:$PATH
 export MAVEN_HOME=/usr/share/maven
 export MAVEN_OPTS="-Xmx2048m -Xms128m -XX:+UseConcMarkSweepGC -XX:+UseParNewGC"
 export ANT_OPTS=$MAVEN_OPTS
-
 
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
