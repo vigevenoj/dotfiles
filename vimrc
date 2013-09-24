@@ -35,13 +35,18 @@ map <silent> <Leader>l :set cursorline! <CR>
 " options for vimdiff
 set diffopt=filler
 set diffopt+=iwhite
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
 " clojure
 au BufRead,BufNewFile *.clj set filetype=clojure
 " For jQuery
 au BufRead,BufNewFile *.js set ft=javascript.jquery
 " Freemarker
-"au BufRead,BufNewFile *.ftl set ft=ftl
+au BufRead,BufNewFile *.ftl set ft=ftl
+" Bash
+au FileType sh setlocal shiftwidth=2 tabstop=2
 
 " Ruby should be two spaces instead of tabs
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab

@@ -13,3 +13,10 @@ Thumbs.db
 #.gitignore
 # vim's network history
 .netrwhist
+# Build and generated files #
+.classpath
+.project
+.settings/
+target/
+
+.vagrant
