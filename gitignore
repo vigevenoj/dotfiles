@@ -8,6 +8,7 @@ Thumbs.db
 .svn
 *~
 .*.swp
+.netrwhist
 
 # Build and generated files #
 .classpath
