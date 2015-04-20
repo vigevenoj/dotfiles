@@ -25,3 +25,13 @@
 [submodule "vim/bundle/puppet-syntax-vim"]
 	path = vim/bundle/puppet-syntax-vim
 	url = https://github.com/puppetlabs/puppet-syntax-vim.git
+
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "vim/bundle/vim-emoji"]
+	path = vim/bundle/vim-emoji
+	url = https://github.com/junegunn/vim-emoji.git
+[submodule "vim/bundle/hotspotgc"]
+	path = vim/bundle/hotspotgc
+	url = git@github.com:vigevenoj/hotspotgc.git
