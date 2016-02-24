@@ -2,7 +2,7 @@
 set nocompatible "No vi compatibility
 
 " Start Pathogen
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 filetype off
 
 " Attempt to determine filetype based on name and contents
