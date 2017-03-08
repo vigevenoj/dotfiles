@@ -99,3 +99,4 @@ elif [ -f /sbin/update-alternatives ]; then
   function j7 () { sudo update-alternatives --set java /usr/lib/jvm/jdk1.7; export $JAVA_HOME=/usr/lib/jvm/jdk1.7_; }
   function j8 () { sudo update-alternatives --set java /usr/lib/jvm/jdk1.8; export $JAVA_HOME=/usr/lib/jvm/jdk1.8_; }
 fi
+

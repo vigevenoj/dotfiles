@@ -52,6 +52,10 @@ au FileType sh setlocal shiftwidth=2 tabstop=2
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 autocmd Filetype bash setlocal ts=2 sw=2 expandtab
 
+" https://github.com/klen/python-mode/issues/525
+let g:pymode_rope_autoimport = 0
+:let g:pymode_rope = 0
+
 " Nyan! ------------------------------------------------------------------- {{{
 
 function! NyanMe() " {{{
