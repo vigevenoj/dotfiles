@@ -41,6 +41,13 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
     #complete -C /usr/share/java/ant-1.7.1/bin/complete-ant-cmd.pl ant
 fi
 
+if [ -d /opt/local/lib/postgresl95/bin ]; then
+  export PATH=$PATH:/opt/local/lib/postgresql95/bin
+  alias postgres_start='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql95-server/postgresql95-server.wrapper start';
+  alias postgres_stop='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql95-server/postgresql95-server.wrapper stop';
+  alias postgres_restart='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql95-server/postgresql95-server.wrapper restart';
+fi  
+  
 if [ -d /Library/PostgreSQL/9.2/bin ]; then
   export PATH=$PATH:/Library/PostgreSQL/9.2/bin
 fi
