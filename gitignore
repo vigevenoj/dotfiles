@@ -21,3 +21,9 @@ Thumbs.db
 target/
 
 .vagrant
+
+# Python 
+__pycache__/
+*.py[cod]
+.ropeproject
+.pydevproject
