@@ -52,6 +52,8 @@ au FileType sh setlocal shiftwidth=2 tabstop=2
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 autocmd Filetype bash setlocal ts=2 sw=2 expandtab
 
+let g:pymode_rope = 0
+
 " Nyan! ------------------------------------------------------------------- {{{
 
 function! NyanMe() " {{{
