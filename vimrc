@@ -6,8 +6,8 @@ call pathogen#infect()
 filetype off
 
 " Attempt to determine filetype based on name and contents
+filetype plugin indent on
 syntax on
-filetype indent plugin on
 
 " Set to auto read when a file is changed externally
 set autoread
