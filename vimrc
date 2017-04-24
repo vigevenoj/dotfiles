@@ -12,6 +12,12 @@ filetype indent plugin on
 " Set to auto read when a file is changed externally
 set autoread
 
+" Put backups and swap files in a central place, not in-tree
+set backup
+set swapfile
+set backupdir=~/.vim-tmp
+set directory=~/.vim-tmp
+
 set incsearch " do incremental searching
 set hlsearch " Highlight search. temporarily turn off with <C-L>
 set ignorecase " Ignore case while searching
@@ -53,6 +59,11 @@ autocmd Filetype bash setlocal ts=2 sw=2 expandtab
 " https://github.com/klen/python-mode/issues/525
 let g:pymode_rope_autoimport = 0
 :let g:pymode_rope = 0
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 " Nyan! ------------------------------------------------------------------- {{{
 
