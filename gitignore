@@ -13,7 +13,7 @@ Thumbs.db
 # gitignores
 #.gitignore
 # vim's network history
-.netrwhist
+vim/.netrwhist
 # Build and generated files #
 .classpath
 .project
