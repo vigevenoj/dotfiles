@@ -50,3 +50,9 @@
 [submodule "vim/bundle/vim-fireplace"]
 	path = vim/bundle/vim-fireplace
 	url = https://github.com/tpope/vim-fireplace.git
+[submodule "vim/bundle/paraedit"]
+	path = vim/bundle/paraedit
+	url = https://github.com/vim-scripts/paredit.vim.git
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
