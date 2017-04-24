@@ -38,6 +38,6 @@
 [submodule "vim/bundle/indentLine"]
 	path = vim/bundle/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
-[submodule "bunde/vim-cljfmt"]
-	path = bunde/vim-cljfmt
+[submodule "vim/bundle/vim-cljfmt"]
+	path = vim/bundle/vim-cljfmt
 	url = https://github.com/venantius/vim-cljfmt.git
