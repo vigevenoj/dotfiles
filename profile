@@ -63,14 +63,6 @@ function mkcd () {
 	cd "$*"
 }
 
-function mysql_resock() {
-	if [ -S /tmp/mysql.sock ]; then
-		echo "/tmp/mysql.sock already exists"
-	else
-		sudo ln -s /opt/local/var/run/mysql5/mysqld.sock /tmp/mysql.sock
-	fi
-}	
-
 export PATH=$HOME/bin:$HOME/local/bin:$PATH
 
 # Android configuration
