@@ -87,6 +87,17 @@ fi
 export MAVEN_OPTS="-Xmx2048m -Xms128m -XX:+UseConcMarkSweepGC -XX:+UseParNewGC"
 export ANT_OPTS=$MAVEN_OPTS
 
+# Gradle configuration
+if [ -d /opt/local/share/java/gradle ]; then
+  export GRADLE_HOME=/opt/local/share/java/gradle
+fi
+
+# Go configuration
+if [ -d $HOME/code/go ]; then
+  export GOPATH=$HOME/code/go
+  export GOBIN=$HOME/code/go/bin
+fi
+
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
@@ -99,7 +110,9 @@ if [ -f /usr/libexec/java_home ]; then
   # We are probably on osx, but no guarantees
   alias j6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6*)'
   alias j7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7*)'
-  alias j8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_40)'
+  alias j8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
+  alias j9='export JAVA_HOME=$(/usr/libexec/java_home -v 9)'
+  alias j10='export JAVA_HOME=$(/usr/libexec/java_home -v 10)'
 elif [ -f /sbin/update-alternatives ]; then
   # We are on a debian (or derivative) system
   function j6 () { sudo update-alternatives --set java /usr/lib/jvm/jdk1.6; export $JAVA_HOME=/usr/lib/jvm/jdk1.6_; }
