@@ -31,7 +31,7 @@
 	url = https://github.com/junegunn/vim-emoji.git
 [submodule "vim/bundle/hotspotgc"]
 	path = vim/bundle/hotspotgc
-	url = git@github.com:vigevenoj/hotspotgc.git
+	url = https://github.com/vigevenoj/hotspotgc.git
 [submodule "vim/bundle/python-mode"]
 	path = vim/bundle/python-mode
 	url = https://github.com/klen/python-mode.git
