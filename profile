@@ -100,17 +100,15 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Set up aliases or functions to switch between JDKs
 if [ -f /usr/libexec/java_home ]; then
   # We are probably on osx, but no guarantees
-  alias j6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6*)'
-  alias j7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7*)'
   alias j8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
   alias j9='export JAVA_HOME=$(/usr/libexec/java_home -v 9)'
   alias j10='export JAVA_HOME=$(/usr/libexec/java_home -v 10)'
+  alias j11='export JAVA_HOME=$(/usr/libexec/java_home -v 11)'
 elif [ -f /sbin/update-alternatives ]; then
   # We are on a debian (or derivative) system
-  function j6 () { sudo update-alternatives --set java /usr/lib/jvm/jdk1.6; export $JAVA_HOME=/usr/lib/jvm/jdk1.6_; }
-  function j7 () { sudo update-alternatives --set java /usr/lib/jvm/jdk1.7; export $JAVA_HOME=/usr/lib/jvm/jdk1.7_; }
   function j8 () { sudo update-alternatives --set java /usr/lib/jvm/jdk1.8; export $JAVA_HOME=/usr/lib/jvm/jdk1.8_; }
 fi
+  function j11() { sudo update-alternatives --set java /usr/lib/jvm/jdk11; export $JAVA_HOME /usr/lib/jvm/jdk11; }
 
 function fixwebcam {
   sudo kill $(ps -ef | grep -i "vdcassistant" | grep -v grep | awk '{print $2}')
