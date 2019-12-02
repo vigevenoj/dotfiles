@@ -11,20 +11,16 @@ alias psql='psql -U postgres'
 # OS X specific
 alias qlook='qlmanage -p "$@" >& /dev/null'
 
-alias hpjmeter='java -jar ~/tools/hpjmeter.jar > /dev/null 2>&1 &'
-alias tda='java -jar ~/tools/tda-bin-2.2/tda.jar > /dev/null 2>&1 &'
-
-
 # Configure bash history
 SHELLID=$(tty | sed 's!/!.!g') # Multiple history files by shell id
 HISTFILE=$HISTFILE$SHELLID
 export HISTCONTROL=ignoredups
 export HISTIGNORE="ls:ll:la:l.:lf:pwd:exit:clear"
+export EDITOR=vim
 
 if [ -d /opt/local/share/man ]; then
   export MANPATH=/opt/local/share/man:$MANPATH
 fi
-export EDITOR=vim
 
 # For todo script tab completion
 if [ -f ~/bin/todo_completer.sh ]; then
@@ -47,10 +43,6 @@ if [ -d /opt/local/lib/postgresl95/bin ]; then
   alias postgres_stop='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql95-server/postgresql95-server.wrapper stop';
   alias postgres_restart='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql95-server/postgresql95-server.wrapper restart';
 fi  
-  
-if [ -d /Library/PostgreSQL/9.2/bin ]; then
-  export PATH=$PATH:/Library/PostgreSQL/9.2/bin
-fi
 
 # Move newly-downloaded music into iTunes
 function new_music() { 
@@ -113,3 +105,5 @@ fi
 function fixwebcam {
   sudo kill $(ps -ef | grep -i "vdcassistant" | grep -v grep | awk '{print $2}')
 }
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
