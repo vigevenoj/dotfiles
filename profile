@@ -12,6 +12,7 @@ alias psql='psql -U postgres'
 alias qlook='qlmanage -p "$@" >& /dev/null'
 
 # Configure bash history
+# This doesn't work in a recent osx; just search ~/.bash_sessions
 SHELLID=$(tty | sed 's!/!.!g') # Multiple history files by shell id
 HISTFILE=$HISTFILE$SHELLID
 export HISTCONTROL=ignoredups
@@ -41,17 +42,6 @@ if [ -d /opt/local/lib/postgresl96/bin ]; then
   alias postgres_stop='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql96-server/postgresql96-server.wrapper stop';
   alias postgres_restart='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql96-server/postgresql96-server.wrapper restart';
 fi  
-
-# Move newly-downloaded music into iTunes
-function new_music() { 
-find ~/Downloads -name "*.mp3" -print0 | xargs -0 -I {} mv {} ~/Music/Automatically\ Add\ to\ iTunes/ 
-}
-
-#mkdir, cd into it
-function mkcd () {
-	mkdir -p "$*"
-	cd "$*"
-}
 
 export PATH=$HOME/bin:$HOME/local/bin:$PATH
 
@@ -95,6 +85,17 @@ fi
 
 function fixwebcam {
   sudo kill $(ps -ef | grep -i "vdcassistant" | grep -v grep | awk '{print $2}')
+}
+
+# Move newly-downloaded music into iTunes
+function new_music() { 
+find ~/Downloads -name "*.mp3" -print0 | xargs -0 -I {} mv {} ~/Music/Automatically\ Add\ to\ iTunes/ 
+}
+
+#mkdir, cd into it
+function mkcd () {
+	mkdir -p "$*"
+	cd "$*"
 }
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
