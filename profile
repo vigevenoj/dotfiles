@@ -33,15 +33,13 @@ fi
 if [ -f /opt/local/etc/bash_completion ]; then
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
     . /opt/local/etc/bash_completion
-    # ant isn't installed on all the machines?
-    #complete -C /usr/share/java/ant-1.7.1/bin/complete-ant-cmd.pl ant
 fi
 
-if [ -d /opt/local/lib/postgresl95/bin ]; then
-  export PATH=$PATH:/opt/local/lib/postgresql95/bin
-  alias postgres_start='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql95-server/postgresql95-server.wrapper start';
-  alias postgres_stop='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql95-server/postgresql95-server.wrapper stop';
-  alias postgres_restart='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql95-server/postgresql95-server.wrapper restart';
+if [ -d /opt/local/lib/postgresl96/bin ]; then
+  export PATH=$PATH:/opt/local/lib/postgresql96/bin
+  alias postgres_start='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql96-server/postgresql96-server.wrapper start';
+  alias postgres_stop='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql96-server/postgresql96-server.wrapper stop';
+  alias postgres_restart='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql96-server/postgresql96-server.wrapper restart';
 fi  
 
 # Move newly-downloaded music into iTunes
@@ -57,18 +55,11 @@ function mkcd () {
 
 export PATH=$HOME/bin:$HOME/local/bin:$PATH
 
-# Android configuration
-if [ -d $HOME/tools/android-sdk-macosx/tools ]; then
-  export PATH=$HOME/tools/android-sdk-macosx/tools:$HOME/tools/android-skd-macosx/platform-tools:$PATH
-  export ANDROID_HOME=$HOME/tools/android-sdk-macosx
-  export ANDROID_SDK_HOME=$HOME/tools/android-sdk-macosx
-fi
-
 # Maven configuration
 if [ -d /opt/local/share/java/maven3 ]; then
   export MAVEN_HOME=/opt/local/share/java/maven3
 fi
-export MAVEN_OPTS="-Xmx2048m -Xms128m -XX:+UseConcMarkSweepGC -XX:+UseParNewGC"
+export MAVEN_OPTS="-Xmx2048m -Xms128m"
 export ANT_OPTS=$MAVEN_OPTS
 
 # Gradle configuration
