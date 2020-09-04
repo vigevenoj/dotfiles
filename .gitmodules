@@ -19,10 +19,6 @@
 [submodule "vim/bundle/nyancat-vim"]
 	path = vim/bundle/nyancat-vim
 	url = git://github.com/koron/nyancat-vim.git
-[submodule "vim/bundle/puppet-syntax-vim"]
-	path = vim/bundle/puppet-syntax-vim
-	url = https://github.com/puppetlabs/puppet-syntax-vim.git
-
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
