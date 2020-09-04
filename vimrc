@@ -45,13 +45,6 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-" clojure
-"au BufRead,BufNewFile *.clj set filetype=clojure
-
-" For jQuery
-au BufRead,BufNewFile *.js set ft=javascript.jquery
-" Freemarker
-au BufRead,BufNewFile *.ftl set ft=ftl
 " Bash
 au FileType sh setlocal shiftwidth=2 tabstop=2
 
